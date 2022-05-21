@@ -6,6 +6,6 @@ git clone https://github.com/vcyzteen/.nix.git
 sudo cp -r .nix/nixos /etc/
 ```
 ```sh
-cp -r nixpkgs ~/.config
+cp -r .nix/nixpkgs ~/.config/
 ```
 My nixos configuration
