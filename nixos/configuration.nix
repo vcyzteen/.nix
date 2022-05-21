@@ -79,8 +79,22 @@
     extraGroups = [ "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
-  # allow unfree pkg
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = 
+  {
+    # Allow proprietary packages
+    allowUnfree = true;
+
+    # Create an alias for the unstable channel
+    packageOverrides = pkgs: 
+    {
+          unstable = import <nixos-unstable> 
+              { 
+              # pass the nixpkgs config to the unstable alias
+              # to ensure `allowUnfree = true;` is propagated:
+              config = config.nixpkgs.config; 
+              };
+      };
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -96,6 +110,7 @@
     aria2
     tdesktop
     intel-compute-runtime
+    spotify
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
