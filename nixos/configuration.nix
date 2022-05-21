@@ -76,8 +76,12 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuu = {
     isNormalUser = true;
+    allowUnfree = true;
     extraGroups = [ "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
+
+  # allow unfree pkg
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -109,7 +113,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 57621 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
