@@ -76,7 +76,6 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuu = {
     isNormalUser = true;
-    allowUnfree = true;
     extraGroups = [ "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
