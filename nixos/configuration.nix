@@ -47,6 +47,9 @@
     keyMap = "us";
   };
 
+  # Fish shell.
+  programs.fish.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
