@@ -50,6 +50,9 @@
   # Fish shell.
   programs.fish.enable = true;
 
+  # Light.
+  programs.light.enable = true;
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -79,7 +82,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuu = {
     isNormalUser = true;
-    extraGroups = [ "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "video" "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
   };
 
   nixpkgs.config = 
@@ -114,7 +117,16 @@
     tdesktop
     intel-compute-runtime
     spotify
+    brightnessctl
+    pactl
   ];
+
+  # Xinit sway.
+  # environment.loginShellInit = ''
+  #   if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+  #     exec sway
+  #   fi
+  # '';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
