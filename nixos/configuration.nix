@@ -51,7 +51,7 @@
   programs.fish.enable = true;
 
   # Light.
-  programs.light.enable = true;
+  # programs.light.enable = true;
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
