@@ -20,6 +20,5 @@
     intel-compute-runtime
     spotify
     brightnessctl
-    pactl
   ];
 }
