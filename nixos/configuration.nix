@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      # Drop your app need to be install here
       ./apps.nix
     ];
 
