@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.
 
-{ pkgs }:
+{ config, pkgs, ... }:
 
 {
   # List packages installed in system profile. To search, run:
