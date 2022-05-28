@@ -57,6 +57,10 @@
 
   # Enable the X11 windowing system.
   services.xserver.enable = true;
+  
+  # Intel Graphics drivers.
+  services.xserver.videoDrivers = [ "modesetting" ];
+  services.xserver.useGlamor = true;
 
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
