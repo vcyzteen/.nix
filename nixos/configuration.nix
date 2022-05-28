@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./apps.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -102,25 +103,6 @@
       };
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    firefox
-    curl
-    git
-    networkmanager
-    gnupg
-    fish
-    aria2
-    tdesktop
-    intel-compute-runtime
-    spotify
-    brightnessctl
-    pactl
-  ];
-
   # Xinit sway.
   # environment.loginShellInit = ''
   #   if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
@@ -155,5 +137,8 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "21.11"; # Did you read the comment?
 
-}
+  # Allowing automatic upgrade.
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
+}
