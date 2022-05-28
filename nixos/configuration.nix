@@ -84,7 +84,10 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.yuu = {
     isNormalUser = true;
+    home = "/home/yuu";
+    description = "Yuu Foobar";
     extraGroups = [ "video" "users" "wheel" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOPgElnBV6Fy9uOkoydDY7HkCYvyqY+0nW/X+7+SbkjS vcyzteen@pm.me" ];
   };
 
   nixpkgs.config = 
